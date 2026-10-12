@@ -1,0 +1,795 @@
+/* ==========================================================================
+   1. GLOBAL STYLES, TYPOGRAPHY & ACCESSIBILITY
+   ========================================================================== */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;                     /* Smooth scrolling enabled for anchor links */
+}
+
+body {
+    font-family: 'Open Sans', Arial, sans-serif;
+    background-color: #FFFAF3;                   /* Soft off-white background */
+    color: #333333;                              /* High contrast dark text for WCAG AA */
+    line-height: 1.7;                            /* Line-height 1.7 for readability */
+}
+
+p {
+    line-height: 1.7;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Heading Typography & Logical Order Structure */
+h1, h2, h3, h4 {
+    font-family: 'Playfair Display', Georgia, serif;
+    color: #4B2E2B;                              /* Dark Espresso brown */
+    margin-bottom: 0.75rem;
+}
+
+.section-title {
+    font-size: 2.2rem;
+    text-align: center;
+    color: #4B2E2B;
+    position: relative;
+    margin-bottom: 0.5rem;
+}
+
+/* Thin caramel underline under section headings */
+.section-title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background-color: #C68B59;                   
+    margin: 0.6rem auto 1.2rem auto;
+    border-radius: 2px;
+}
+
+.section-title.left-align {
+    text-align: left;
+}
+
+.section-title.left-align::after {
+    margin-left: 0;
+}
+
+.section-subtitle {
+    text-align: center;
+    color: #C68B59;
+    font-style: italic;
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+}
+
+a {
+    color: #4B2E2B;
+    text-decoration: none;
+    transition: color 0.3s ease, border-color 0.3s ease;
+}
+
+a:hover {
+    color: #C68B59;
+}
+
+/* ACCESSIBILITY CHANGE: Visible focus outline for keyboard navigation (:focus-visible) */
+a:focus-visible,
+button:focus-visible,
+.btn:focus-visible {
+    outline: 3px solid #C68B59;                   /* Caramel high-contrast outline */
+    outline-offset: 4px;
+    border-radius: 4px;
+}
+
+
+/* ==========================================================================
+   2. STICKY HEADER & NAVIGATION
+   ========================================================================== */
+
+.site-header {
+    background-color: #4B2E2B;                       /* Dark espresso background */
+    position: sticky;                                /* Sticky position */
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+.header-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 1rem 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #F5EBDD;                                  /* Cream color text */
+}
+
+.logo span {
+    color: #C68B59;                                  /* Caramel color */
+    font-weight: 400;
+    font-size: 1.1rem;
+}
+
+.main-nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+}
+
+.main-nav a {
+    color: #F5EBDD;
+    font-weight: 600;
+    padding: 0.5rem 0;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+/* Nav link hover effects */
+.main-nav a:hover {
+    color: #C68B59;                                  
+}
+
+.main-nav a::after {
+    content: '';
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    bottom: -2px;
+    left: 0;
+    background-color: #C68B59;
+    transition: width 0.3s ease-in-out;
+}
+
+.main-nav a:hover::after {
+    width: 100%;
+}
+
+
+/* ==========================================================================
+   3. HERO SECTION
+   ========================================================================== */
+
+.hero-section {
+    position: relative;
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: url('oxford.jpeg') no-repeat center center/cover;
+    text-align: center;
+    padding: 80px 20px;
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(75, 46, 43, 0.55);       /* Dark overlay rgba(75, 46, 43, 0.55) */
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    margin: 0 auto;
+    color: #FFFFFF;
+}
+
+.hero-title {
+    font-size: 3.2rem;
+    color: #FFFFFF;
+    margin-bottom: 0.5rem;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.hero-content .tagline {
+    font-size: 1.5rem;
+    color: #F5EBDD;
+    font-weight: 600;
+    margin-bottom: 1.2rem;
+    font-style: italic;
+}
+
+.hero-content .welcome-text {
+    font-size: 1.15rem;
+    margin-bottom: 2rem;
+    color: #FFFAF3;
+    line-height: 1.7;
+}
+
+/* BUTTON STYLES (ACCESSIBILITY UPDATED: Min 44px height for touch targets) */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 44px;                                 /* Minimum 44px touch target */
+    padding: 0.8rem 2rem;
+    border-radius: 30px;
+    font-weight: 600;
+    font-size: 1.05rem;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* High Contrast Caramel Button with Dark Espresso Text (#4B2E2B on #C68B59) for WCAG AA */
+.btn-caramel {
+    background-color: #C68B59;
+    color: #4B2E2B;                                  /* Strong WCAG AA contrast */
+}
+
+.btn-caramel:hover {
+    background-color: #A87042;                       /* Darkened caramel on hover */
+    color: #FFFFFF;
+    transform: scale(1.05);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+}
+
+
+/* ==========================================================================
+   4. FEATURED DRINKS SECTION
+   ========================================================================== */
+
+.featured-section {
+    padding: 80px 0;
+    background-color: #FFFAF3;                       /* Alternating Off-white background */
+}
+
+.card-grid {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: stretch;
+}
+
+.card {
+    background-color: #FFFFFF;
+    border: 1px solid #F5EBDD;
+    border-radius: 12px;
+    overflow: hidden;
+    flex: 1 1 300px;
+    max-width: 340px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 24px rgba(75, 46, 43, 0.18);
+}
+
+.card-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.card-body {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.card-title {
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+}
+
+.card-desc {
+    font-size: 0.95rem;
+    color: #555555;
+    margin-bottom: 1.2rem;
+    flex-grow: 1;
+}
+
+.card-price {
+    font-weight: 700;
+    color: #C68B59;
+    font-size: 1.2rem;
+    display: block;
+}
+
+
+/* ==========================================================================
+   5. ABOUT US SECTION
+   ========================================================================== */
+
+.about-section {
+    padding: 80px 0;
+    background-color: #F5EBDD;                       
+}
+
+.about-grid {
+    display: flex;
+    gap: 3rem;
+    align-items: center;
+}
+
+.about-text {
+    flex: 1;
+}
+
+.about-text p {
+    margin-bottom: 1rem;
+}
+
+.about-text a {
+    color: #4B2E2B;
+    text-decoration: underline;
+    font-weight: 600;
+}
+
+.about-text h3 {
+    margin-top: 1.5rem;
+    font-size: 1.3rem;
+}
+
+.features-list {
+    list-style: disc;
+    padding-left: 1.5rem;
+    margin-top: 0.5rem;
+}
+
+.features-list li {
+    margin-bottom: 0.5rem;
+}
+
+.about-image-wrapper {
+    flex: 1;
+}
+
+.about-img {
+    width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(75, 46, 43, 0.12);
+}
+
+
+/* ==========================================================================
+   6. MENU SECTION (NEW CONTENT: Weekly Specials Styled)
+   ========================================================================== */
+
+.menu-section {
+    padding: 80px 0;
+    background-color: #FFFAF3;                       
+}
+
+/* NEW CONTENT: Weekly Specials Container Box */
+.specials-box {
+    background-color: #F5EBDD;
+    border-left: 5px solid #C68B59;
+    border-radius: 8px;
+    padding: 1.5rem 2rem;
+    margin-bottom: 2.5rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.specials-heading {
+    font-size: 1.4rem;
+    color: #4B2E2B;
+    margin-bottom: 0.8rem;
+}
+
+.specials-list {
+    list-style: none;
+}
+
+.specials-list li {
+    padding: 0.4rem 0;
+    border-bottom: 1px dashed rgba(75, 46, 43, 0.15);
+    font-size: 0.98rem;
+}
+
+.specials-list li:last-child {
+    border-bottom: none;
+}
+
+.specials-list strong {
+    color: #C68B59;
+}
+
+.table-caption {
+    caption-side: top;
+    text-align: center;
+    font-style: italic;
+    color: #C68B59;
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.table-responsive {
+    overflow-x: auto;
+    border-radius: 8px;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.06);
+}
+
+.menu-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #FFFFFF;
+    text-align: left;
+}
+
+.menu-table th, 
+.menu-table td {
+    padding: 1.2rem 1.5rem;
+    border: 1px solid #F5EBDD;
+}
+
+.menu-table th {
+    background-color: #3D2422;                       /* Darker espresso header */
+    color: #F5EBDD;
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 1.1rem;
+}
+
+.menu-table th:nth-child(4),
+.menu-table td:nth-child(4) {
+    text-align: right;                               /* Right-aligned Price column */
+}
+
+.menu-table tbody tr:nth-child(even) {
+    background-color: #FFFAF3;
+}
+
+.menu-table tbody tr:hover {
+    background-color: rgba(198, 139, 89, 0.18);     /* Soft caramel row hover */
+}
+
+
+/* ==========================================================================
+   NEW CONTENT: 7. CUSTOMER REVIEWS SECTION
+   ========================================================================== */
+
+.reviews-section {
+    padding: 80px 0;
+    background-color: #F5EBDD;                       
+}
+
+.reviews-grid {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: stretch;
+}
+
+.review-card {
+    background-color: #FFFFFF;
+    border: 1px solid #F5EBDD;
+    border-radius: 12px;
+    padding: 2rem;
+    flex: 1 1 300px;
+    max-width: 340px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.review-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(75, 46, 43, 0.12);
+}
+
+.review-rating {
+    color: #C68B59;                                  /* Caramel color stars */
+    font-size: 1.3rem;
+    letter-spacing: 3px;
+    margin-bottom: 0.8rem;
+}
+
+.review-quote {
+    font-style: italic;
+    color: #444444;
+    margin-bottom: 1.5rem;
+    flex-grow: 1;
+}
+
+.review-author {
+    font-weight: 700;
+    color: #4B2E2B;
+    font-size: 1.05rem;
+}
+
+.review-role {
+    font-size: 0.88rem;
+    color: #C68B59;
+}
+
+
+/* ==========================================================================
+   8. VISIT US / CONTACT SECTION (UPDATED: 2-Column Desktop Grid)
+   ========================================================================== */
+
+.visit-section {
+    padding: 80px 0;
+    background-color: #FFFAF3;                       
+}
+
+/* Two-column desktop flex layout */
+.visit-grid {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+    align-items: stretch;
+}
+
+.contact-card, .hours-card {
+    background-color: #FFFFFF;
+    padding: 2.2rem;
+    border-radius: 12px;
+    flex: 1 1 300px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-card p, .hours-card p {
+    margin-bottom: 0.8rem;
+}
+
+.directions-btn-wrapper {
+    margin-top: auto;                                /* Aligns directions button at bottom */
+    padding-top: 1.2rem;
+}
+
+.hours-list {
+    list-style: none;
+    margin-bottom: 1rem;
+}
+
+.hours-list li {
+    padding: 0.5rem 0;
+    border-bottom: 1px dashed #F5EBDD;
+    display: flex;
+    justify-content: space-between;
+}
+
+.hours-list li span {
+    font-weight: 600;
+    color: #4B2E2B;
+}
+
+.discount-note {
+    font-size: 0.9rem;
+    color: #C68B59;
+    margin-top: auto;
+}
+
+
+/* ==========================================================================
+   REDESIGNED: 9. FOOTER SECTION (3 Columns, Dark Espresso Theme)
+   ========================================================================== */
+
+.site-footer {
+    background-color: #4B2E2B;                       /* Dark espresso background */
+    color: #F5EBDD;                                  /* Cream text */
+    padding: 70px 0 30px 0;
+    border-top: 4px solid #C68B59;                   /* Thin caramel accent header strip */
+}
+
+/* 3-Column Footer Grid */
+.footer-grid {
+    display: flex;
+    justify-content: space-between;
+    gap: 2.5rem;
+    flex-wrap: wrap;
+    margin-bottom: 3rem;
+}
+
+.footer-col {
+    flex: 1 1 250px;
+}
+
+.footer-heading {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 1.3rem;
+    color: #F5EBDD;                                  /* Cream color heading */
+    margin-bottom: 1rem;
+    position: relative;
+}
+
+.footer-heading::after {
+    content: '';
+    display: block;
+    width: 35px;
+    height: 2px;
+    background-color: #C68B59;
+    margin-top: 0.4rem;
+}
+
+.footer-tagline {
+    color: #C68B59;                                  /* Caramel tagline */
+    font-style: italic;
+    font-weight: 600;
+    margin-bottom: 0.8rem;
+}
+
+.footer-desc {
+    font-size: 0.9rem;
+    color: #E2D4C3;
+    line-height: 1.6;
+}
+
+.footer-nav {
+    list-style: none;
+}
+
+.footer-nav li {
+    margin-bottom: 0.6rem;
+}
+
+.footer-nav a {
+    color: #F5EBDD;                                  /* Cream text */
+    font-size: 0.95rem;
+    transition: color 0.3s ease;
+}
+
+/* Links turn caramel on hover */
+.footer-nav a:hover {
+    color: #C68B59;                                  /* Caramel hover color */
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(245, 235, 221, 0.15);
+}
+
+.copyright {
+    font-size: 0.85rem;
+    color: #C2B2A3;
+}
+
+
+/* ==========================================================================
+   NEW CONTENT: 10. BACK TO TOP CIRCULAR BUTTON
+   ========================================================================== */
+
+.back-to-top {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    width: 48px;
+    height: 48px;
+    background-color: #4B2E2B;                       /* Dark espresso background */
+    color: #F5EBDD;                                  /* Cream text */
+    border: 2px solid #C68B59;                       /* Caramel border */
+    border-radius: 50%;                              /* Circular shape */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+    font-weight: bold;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+    z-index: 999;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.back-to-top:hover {
+    background-color: #C68B59;                       /* Turns caramel on hover */
+    color: #4B2E2B;
+    transform: translateY(-4px);
+}
+
+
+/* ==========================================================================
+   11. RESPONSIVE DESIGN & MOBILE USABILITY
+   ========================================================================== */
+
+/* Tablet & Smartphone Screen Widths (Below 768px) */
+@media (max-width: 768px) {
+    /* Stack Nav Links in Centered Column */
+    .header-container {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+    }
+
+    .main-nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.6rem;
+    }
+
+    /* Reduce Hero Text Size */
+    .hero-title {
+        font-size: 2.2rem;
+    }
+
+    .hero-content .tagline {
+        font-size: 1.2rem;
+    }
+
+    .hero-section {
+        min-height: 60vh;
+        padding: 60px 20px;
+    }
+
+    /* Single-Column Layouts for Cards, Grids, and Footer */
+    .about-grid,
+    .card-grid,
+    .reviews-grid,
+    .visit-grid,
+    .footer-grid {
+        flex-direction: column;
+    }
+
+    .card, .review-card, .footer-col {
+        max-width: 100%;
+        width: 100%;
+    }
+
+    /* ACCESSIBILITY & TOUCH TARGETS: Ensure buttons are at least 44px tall */
+    .btn, 
+    .back-to-top {
+        min-height: 44px;
+        min-width: 44px;
+    }
+}
+
+/* Small Smartphone Screen Widths (Below 480px) */
+@media (max-width: 480px) {
+    /* Reduced Section Padding to 40px */
+    .featured-section,
+    .about-section,
+    .menu-section,
+    .reviews-section,
+    .visit-section {
+        padding: 40px 0;
+    }
+
+    .section-title {
+        font-size: 1.8rem;
+    }
+
+    .hero-title {
+        font-size: 1.8rem;
+    }
+
+    
+    .menu-table {
+        font-size: 0.85rem;
+    }
+
+    .menu-table th, 
+    .menu-table td {
+        padding: 0.8rem 0.6rem;
+    }
+
+    .specials-box {
+        padding: 1.2rem 1rem;
+    }
+
+    .back-to-top {
+        bottom: 15px;
+        right: 15px;
+        width: 44px;
+        height: 44px;
+    }
+}

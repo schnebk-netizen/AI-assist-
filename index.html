@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maple &amp; Bean Coffee House | Oxford, OH</title>
+    
+    <!-- Google Fonts import -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    
+    <!-- Link to external stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- ===================================================================
+         HEADER & NAVIGATION (ACCESSIBILITY UPDATED: aria-label added)
+         =================================================================== -->
+    <header class="site-header">
+        <div class="header-container">
+            <a href="#home" class="logo">Maple &amp; Bean <span>Coffee House</span></a>
+            
+            <!-- ACCESSIBILITY CHANGE: Added landmark aria-label to main nav -->
+            <nav class="main-nav" aria-label="Main Navigation">
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#menu">Menu</a></li>
+                    <!-- NEW CONTENT: Link to Customer Reviews -->
+                    <li><a href="#reviews">Reviews</a></li>
+                    <li><a href="#visit">Visit Us</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- ===============================================================
+             1. HERO SECTION
+             =============================================================== -->
+        <section id="home" class="hero-section">
+            <div class="hero-content">
+                <h1 class="hero-title">Maple &amp; Bean Coffee House</h1>
+                <p class="tagline">Brewed Slow. Shared Warm.</p>
+                <p class="welcome-text">
+                    Welcome to Oxford's cozy corner for crafted espresso, fresh local pastries, and study-friendly vibes. 
+                    Whether you're gearing up for midterms or catching up with friends, we have a warm seat saved for you.
+                </p>
+                <a href="#menu" class="btn btn-caramel">View Our Menu</a>
+            </div>
+        </section>
+
+        <!-- ===============================================================
+             FEATURED DRINKS SECTION
+             =============================================================== -->
+        <section class="featured-section">
+            <div class="container">
+                <h2 class="section-title">Seasonal Favorites</h2>
+                <p class="section-subtitle">Handcrafted drinks prepared fresh daily by our baristas.</p>
+                
+                <div class="card-grid">
+                    <!-- ACCESSIBILITY CHANGE: High-contrast descriptive alt text -->
+                    <article class="card">
+                        <img src="map.cin.webp" 
+                             alt="Hot Maple Cinnamon Latte topped with cozy foam in a ceramic mug" 
+                             class="card-img">
+                        <div class="card-body">
+                            <h3 class="card-title">Maple Cinnamon Latte</h3>
+                            <p class="card-desc">Espresso, steamed milk, pure local Ohio maple syrup, and a dash of ground cinnamon.</p>
+                            <span class="card-price">$5.25</span>
+                        </div>
+                    </article>
+
+                    <article class="card">
+                        <img src="cbrew.jpg" 
+                             alt="Tall clear glass filled with signature cold brew coffee over ice cubes" 
+                             class="card-img">
+                        <div class="card-body">
+                            <h3 class="card-title">Signature Cold Brew</h3>
+                            <p class="card-desc">Slow-steeped for 18 hours using ethically sourced, locally roasted beans.</p>
+                            <span class="card-price">$4.75</span>
+                        </div>
+                    </article>
+
+                    <article class="card">
+                        <img src="chai.jpeg" 
+                             alt="Steaming cup of spiced golden chai latte topped with oat milk foam" 
+                             class="card-img">
+                        <div class="card-body">
+                            <h3 class="card-title">Spiced Golden Chai</h3>
+                            <p class="card-desc">House-brewed black tea infusion blended with aromatic spices and creamy oat milk.</p>
+                            <span class="card-price">$5.00</span>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===============================================================
+             2. ABOUT US SECTION
+             =============================================================== -->
+        <section id="about" class="about-section">
+            <div class="container">
+                <div class="about-grid">
+                    <div class="about-text">
+                        <h2 class="section-title left-align">About Our Coffee House</h2>
+                        <p>
+                            Founded in 2018 by two Miami University alumni, <strong>Maple &amp; Bean Coffee House</strong> was born out of a passion for great coffee and community gathering spaces. Located in the heart of Oxford, Ohio, we pride ourselves on creating a warm, comfortable haven where students, faculty, and locals feel right at home.
+                        </p>
+                        <p>
+                            We proudly partner with <a href="https://example.com/roasters" target="_blank" rel="noopener noreferrer">Midwest Craft Roasters</a> for ethically sourced, locally roasted beans, and receive fresh daily baked goods from our neighbors at High Street Bakery.
+                        </p>
+                        
+                        <h3>Why You'll Love It Here</h3>
+                        <ul class="features-list">
+                            <li><strong>Free High-Speed Wi-Fi:</strong> Outlets accessible at every table for study sessions.</li>
+                            <li><strong>Cozy &amp; Spacious Seating:</strong> Plush armchairs, large worktables, and quiet nooks.</li>
+                            <li><strong>Vegan &amp; Dairy-Free Options:</strong> Oat, almond, and soy milk plus gluten-free pastries.</li>
+                            <li><strong>Student &amp; Faculty Discount:</strong> 10% off your entire order with a valid ID.</li>
+                        </ul>
+                    </div>
+
+                    <div class="about-image-wrapper">
+                        <img src="cozy.jpeg" 
+                             alt="Interior view of Maple and Bean Coffee House showing students studying at wooden tables" 
+                             class="about-img">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===============================================================
+             3. MENU SECTION (NEW CONTENT: Weekly Specials Added)
+             =============================================================== -->
+        <section id="menu" class="menu-section">
+            <div class="container">
+                <h2 class="section-title">Full Menu</h2>
+                <p class="section-subtitle">Crafted with care using high-quality local ingredients.</p>
+
+                <div class="specials-box">
+                    <h3 class="specials-heading">Weekly Specials</h3>
+                    <ul class="specials-list">
+                        <li><strong>Monday:</strong> Student Latte Discount — $1.00 off any espresso beverage with valid ID</li>
+                        <li><strong>Wednesday:</strong> Double Stamp Day — Earn 2x loyalty rewards on all handcrafted drinks</li>
+                        <li><strong>Friday:</strong> Free Pastry Friday — Free bakery item with any large specialty drink</li>
+                        <li><strong>Sunday:</strong> Study Brew Refill — $1.50 unlimited drip coffee refills all day</li>
+                    </ul>
+                </div>
+
+                <div class="table-responsive">
+                    <table class="menu-table">
+                        <caption class="table-caption">All drinks available with oat or almond milk.</caption>
+                        <thead>
+                            <tr>
+                                <th scope="col">Item</th>
+                                <th scope="col">Description</th>
+                                <th scope="col">Size</th>
+                                <th scope="col">Price</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>House Drip Coffee</strong></td>
+                                <td>Medium roast, smooth chocolate &amp; nutty tasting notes</td>
+                                <td>12 oz / 16 oz</td>
+                                <td>$2.75 / $3.25</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Classic Espresso</strong></td>
+                                <td>Double shot of rich, concentrated espresso</td>
+                                <td>2 oz</td>
+                                <td>$3.00</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Caffè Latte</strong></td>
+                                <td>Espresso with silky steamed milk and a thin layer of foam</td>
+                                <td>12 oz / 16 oz</td>
+                                <td>$4.50 / $5.00</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Maple Cinnamon Latte</strong></td>
+                                <td>Espresso, steamed milk, real local maple syrup &amp; cinnamon</td>
+                                <td>12 oz / 16 oz</td>
+                                <td>$5.25 / $5.75</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Signature Cold Brew</strong></td>
+                                <td>Slow-steeped 18 hours, served smooth over ice</td>
+                                <td>16 oz / 20 oz</td>
+                                <td>$4.75 / $5.25</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Iced Vanilla Chai</strong></td>
+                                <td>Spiced black tea concentrate, milk, vanilla &amp; ice</td>
+                                <td>16 oz / 20 oz</td>
+                                <td>$5.00 / $5.50</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Blueberry Crumble Muffin</strong></td>
+                                <td>Freshly baked daily with wild blueberries and sweet streusel</td>
+                                <td>Single</td>
+                                <td>$3.75</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Butter Croissant</strong></td>
+                                <td>Flaky, golden-brown pastry made with real European butter</td>
+                                <td>Single</td>
+                                <td>$3.50</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Cinnamon Sugar Roll</strong></td>
+                                <td>Warm, gooey house-made cinnamon roll with cream cheese frosting</td>
+                                <td>Single</td>
+                                <td>$4.25</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===============================================================
+             NEW CONTENT: 4. CUSTOMER REVIEWS SECTION
+             =============================================================== -->
+        <section id="reviews" class="reviews-section">
+            <div class="container">
+                <h2 class="section-title">Customer Reviews</h2>
+                <p class="section-subtitle">Hear what our community has to say about us.</p>
+
+                <div class="reviews-grid">
+                    <!-- Review Card 1 -->
+                    <article class="review-card">
+                        <!-- ACCESSIBILITY CHANGE: Text stars with aria-label for screen readers -->
+                        <div class="review-rating" aria-label="5 out of 5 stars">★★★★★</div>
+                        <blockquote class="review-quote">
+                            "The Maple Cinnamon Latte got me through my entire senior thesis! Hands down the best study atmosphere in Oxford."
+                        </blockquote>
+                        <p class="review-author">Maya</p>
+                        <p class="review-role">Biology major, Miami University</p>
+                    </article>
+
+                    <!-- Review Card 2 -->
+                    <article class="review-card">
+                        <div class="review-rating" aria-label="5 out of 5 stars">★★★★★</div>
+                        <blockquote class="review-quote">
+                            "Incredible local coffee, welcoming baristas, and the pastry selection is always fresh. My go-to morning spot!"
+                        </blockquote>
+                        <p class="review-author">Prof. Liam Vance</p>
+                        <p class="review-role">Faculty, Miami University</p>
+                    </article>
+
+                    <!-- Review Card 3 -->
+                    <article class="review-card">
+                        <div class="review-rating" aria-label="5 out of 5 stars">★★★★★</div>
+                        <blockquote class="review-quote">
+                            "Fast Wi-Fi, plenty of outlets at every table, and the oat milk chai is top tier. Perfect place to relax or work."
+                        </blockquote>
+                        <p class="review-author">Sam R.</p>
+                        <p class="review-role">Oxford Resident</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===============================================================
+             5. VISIT US / CONTACT SECTION (UPDATED: 2-Column Desktop & Directions Button)
+             =============================================================== -->
+        <section id="visit" class="visit-section">
+            <div class="container">
+                <h2 class="section-title">Visit Us</h2>
+                <p class="section-subtitle">We can't wait to welcome you to our shop in Oxford!</p>
+
+                <!-- Two-Column Desktop Grid Layout -->
+                <div class="visit-grid">
+                    <!-- Column 1: Contact Details & Embedded Directions Button -->
+                    <div class="contact-card">
+                        <h3>Location &amp; Contact</h3>
+                        <p class="address">
+                            <strong>Maple &amp; Bean Coffee House</strong><br>
+                            124 E. High Street<br>
+                            Oxford, OH 45056
+                        </p>
+                        <p><strong>Phone:</strong> (513) 555-0198</p>
+                        <p><strong>Email:</strong> <a href="mailto:hello@mapleandbeancoffee.com">hello@mapleandbeancoffee.com</a></p>
+                        
+                        <!-- NEW CONTENT: "Get Directions" Button linking to Google Maps in a new tab -->
+                        <div class="directions-btn-wrapper">
+                            <a href="https://maps.google.com/?q=124+E+High+St+Oxford+OH" 
+                               target="_blank" 
+                               rel="noopener noreferrer" 
+                               class="btn btn-caramel">
+                                Get Directions 📍
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Column 2: Opening Hours Table / List -->
+                    <div class="hours-card">
+                        <h3>Weekly Hours</h3>
+                        <ul class="hours-list">
+                            <li><span>Monday – Thursday:</span> 7:00 AM – 8:00 PM</li>
+                            <li><span>Friday:</span> 7:00 AM – 9:00 PM</li>
+                            <li><span>Saturday:</span> 8:00 AM – 9:00 PM</li>
+                            <li><span>Sunday:</span> 8:00 AM – 6:00 PM</li>
+                        </ul>
+                        <p class="discount-note"><em>* Show a valid student ID to receive 10% off handcrafted drinks!</em></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ===================================================================
+         6. FOOTER (REDESIGNED: 3 Columns, Dark Espresso Theme)
+         =================================================================== -->
+    <!-- ACCESSIBILITY CHANGE: Added landmark aria-label to footer -->
+    <footer class="site-footer" aria-label="Site Footer">
+        <div class="container">
+            <!-- 3-Column Footer Grid Layout -->
+            <div class="footer-grid">
+                <!-- Column 1: Shop Info -->
+                <div class="footer-col">
+                    <h3 class="footer-heading">Maple &amp; Bean</h3>
+                    <p class="footer-tagline">Brewed Slow. Shared Warm.</p>
+                    <p class="footer-desc">Oxford's favorite local coffee shop for handcrafted espresso, study spaces, and community.</p>
+                </div>
+
+                <!-- Column 2: Quick Links -->
+                <div class="footer-col">
+                    <h3 class="footer-heading">Quick Links</h3>
+                    <ul class="footer-nav">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#menu">Menu</a></li>
+                        <li><a href="#reviews">Reviews</a></li>
+                        <li><a href="#visit">Visit Us</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 3: Social Links -->
+                <div class="footer-col">
+                    <h3 class="footer-heading">Connect With Us</h3>
+                    <ul class="footer-nav">
+                        <li><a href="#" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+                        <li><a href="#" target="_blank" rel="noopener noreferrer">Facebook</a></li>
+                        <li><a href="mailto:hello@mapleandbeancoffee.com">Email Us</a></li>
+                        <li><a href="https://maps.google.com/?q=124+E+High+St+Oxford+OH" target="_blank" rel="noopener noreferrer">Google Maps</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p class="copyright">&copy; 2026 Maple &amp; Bean Coffee House. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- NEW CONTENT: Back to Top Circular Fixed Button -->
+    <a href="#home" class="back-to-top" aria-label="Back to top of page">↑</a>
+
+</body>
+</html>
